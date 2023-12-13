@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faMailBulk, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faTwitter,
-	faGithub,
-	faStackOverflow,
-	faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
@@ -94,9 +89,13 @@ const Homepage = () => {
 								<div className="title homepage-title">
 									{INFO.homepage.title}
 								</div>
-
+								<div className="title2 homepage-title">
+									{INFO.homepage.job}
+								</div>
 								<div className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
+									<br />
+									{INFO.homepage.description2}
 								</div>
 							</div>
 
@@ -115,16 +114,6 @@ const Homepage = () => {
 
 						<div className="homepage-socials">
 							<a
-								href={INFO.socials.twitter}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faTwitter}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
 								href={INFO.socials.github}
 								target="_blank"
 								rel="noreferrer"
@@ -135,12 +124,12 @@ const Homepage = () => {
 								/>
 							</a>
 							<a
-								href={INFO.socials.stackoverflow}
+								href={INFO.socials.velog}
 								target="_blank"
 								rel="noreferrer"
 							>
 								<FontAwesomeIcon
-									icon={faStackOverflow}
+									icon={faBlog}
 									className="homepage-social-icon"
 								/>
 							</a>

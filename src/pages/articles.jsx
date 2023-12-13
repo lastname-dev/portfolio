@@ -17,12 +17,12 @@ const Articles = () => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const currentSEO = SEO.find((item) => item.page === "articles");
+	const currentSEO = SEO.find((item) => item.page === "experiences");
 
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`Articles | ${INFO.main.title}`}</title>
+				<title>{`Experiences | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta
 					name="keywords"
@@ -49,6 +49,26 @@ const Articles = () => {
 						</div>
 
 						<div className="articles-container">
+							<h2>Education</h2>
+							<div className="articles-wrapper">
+								{myArticles.map((article, index) => (
+									<div
+										className="articles-article"
+										key={(index + 1).toString()}
+									>
+										<Article
+											key={(index + 1).toString()}
+											date={article().date}
+											title={article().title}
+											description={article().description}
+											link={"/article/" + (index + 1)}
+										/>
+									</div>
+								))}
+							</div>
+						</div>
+						<div className="articles-container">
+							<h2>Prize</h2>
 							<div className="articles-wrapper">
 								{myArticles.map((article, index) => (
 									<div

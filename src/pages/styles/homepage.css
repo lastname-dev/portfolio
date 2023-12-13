@@ -28,7 +28,7 @@
 }
 
 .homepage-subtitle {
-	width: 85% !important;
+	width: 100% !important;
 }
 
 .homepage-first-area-right-side {
@@ -111,8 +111,18 @@
 		margin-top: 20px;
 		order: 2;
 	}
+	.homepage-title2 {
+		width: 100% !important;
+		order: 2;
+		margin-top: 100px;
+	}
 
 	.homepage-subtitle {
+		width: 100% !important;
+		margin-top: 10px;
+		order: 3;
+	}
+	.homepage-subtitle2 {
 		width: 100% !important;
 		margin-top: 10px;
 		order: 3;

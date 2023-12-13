@@ -55,6 +55,13 @@
 	font-weight: 700;
 	width: 70%;
 }
+.title2 {
+	color: lightgray;
+	font-family: var(--secondary-font);
+	font-size: 27px;
+	font-weight: 300;
+	width: 70%;
+}
 
 .subtitle {
 	padding-top: 10px;
@@ -114,6 +121,9 @@
 	}
 
 	.title {
+		width: 100%;
+	}
+	.title2 {
 		width: 100%;
 	}
 
