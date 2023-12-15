@@ -1,12 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBlog, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-	faTwitter,
-	faGithub,
-	faLinkedin,
-	faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import INFO from "../../data/user";
 

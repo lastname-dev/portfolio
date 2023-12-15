@@ -8,21 +8,20 @@ import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
+import Prizes from "../components/homepage/prize";
+import Stacks from "../components/homepage/stack";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
 	const [oldLogoSize, setOldLogoSize] = useState(80);
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -161,24 +160,12 @@ const Homepage = () => {
 
 						<div className="homepage-after-title">
 							<div className="homepage-articles">
-								{myArticles.map((article, index) => (
-									<div
-										className="homepage-article"
-										key={(index + 1).toString()}
-									>
-										<Article
-											key={(index + 1).toString()}
-											date={article().date}
-											title={article().title}
-											description={article().description}
-											link={"/article/" + (index + 1)}
-										/>
-									</div>
-								))}
+								<Stacks></Stacks>
 							</div>
 
 							<div className="homepage-works">
 								<Works />
+								<Prizes />
 							</div>
 						</div>
 

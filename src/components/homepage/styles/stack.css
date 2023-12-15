@@ -1,0 +1,36 @@
+.tech-stack-section + .tech-stack-section {
+	margin-top: 25px;
+}
+
+.tech-stack-title {
+	font-size: 15px; /* 더 큰 글꼴 크기로 제목 강조 */
+	color: var(--secondary-color); /* 진한 색상으로 명확한 가독성 제공 */
+	font-weight: 700; /* 제목을 더 두꺼운 글꼴로 */
+	margin-bottom: 15px; /* 제목과 내용 사이에 여백 추가 */
+	border-left: 4px solid #14b8a6; /* 제목 왼쪽에 두꺼운 선으로 포인트를 줌 */
+	padding-left: 10px; /* 왼쪽 패딩을 추가하여 텍스트와 선 사이 간격을 줌 */
+}
+
+.tech-stack-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.tech-stack-content span {
+	display: inline-block;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 8px 12px;
+	font-size: 0.9em;
+	color: #555;
+	margin-bottom: 5px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tech-stack-content span:hover {
+	background-color: #14b8a6; /* 호버시 배경 색상 변경 */
+	color: #fff; /* 호버시 텍스트 색상 변경 */
+	cursor: pointer; /* 마우스를 올렸을 때 커서 변경 */
+}

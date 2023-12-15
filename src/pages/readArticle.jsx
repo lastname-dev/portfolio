@@ -8,7 +8,13 @@ import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 
 import INFO from "../data/user";
-import myArticles from "../data/articles";
+import myProjects from "../data/projects";
+
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import BlogCard from "../components/projects/blogCard";
+import ContentsList from "../components/projects/contentList";
 
 import "./styles/readArticle.css";
 
@@ -18,7 +24,7 @@ const ReadArticle = () => {
 	const navigate = useNavigate();
 	let { slug } = useParams();
 
-	const article = myArticles[slug - 1];
+	const article = myProjects[slug - 1];
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -26,6 +32,20 @@ const ReadArticle = () => {
 
 	ArticleStyle = styled.div`
 		${article().style}
+	`;
+	const StyledLink = styled.a`
+		padding-left: 5px;
+		font-size: 16px;
+		font-weight: 600;
+		text-decoration-line: none;
+		color: #52525b;
+		display: inline;
+		box-shadow: inset 0 -10px 0 ${article().linkcolor};
+
+		&:hover {
+			color: ${article().hovercolor}; // hover 상태의 색상
+			transition: color 0.3s ease-in-out;
+		}
 	`;
 
 	return (
@@ -52,23 +72,78 @@ const ReadArticle = () => {
 								src="../back-button.png"
 								alt="back"
 								className="read-article-back-button"
-								onClick={() => navigate(-1)}
+								onClick={() => navigate("/projects")}
 							/>
 						</div>
-
 						<div className="read-article-wrapper">
-							<div className="read-article-date-container">
-								<div className="read-article-date">
-									{article().date}
-								</div>
-							</div>
-
 							<div className="title read-article-title">
-								{article().title}
+								{/* {article().title} */}
 							</div>
 
 							<div className="read-article-body">
-								<ArticleStyle>{article().body}</ArticleStyle>
+								<img
+									src={article().thumbnail_image}
+									alt="project thumbnail"
+									class="project-image"
+								/>
+
+								<div class="project-intro">
+									🔍 프로젝트 소개
+								</div>
+								<div class="project-description">
+									{article().long_description}
+								</div>
+								<div className="read-article-info-container">
+									<div className="read-article-date">
+										📅 기간 : {article().period}
+									</div>
+									<div className="read-article-date">
+										👤 인원 : {article().team}
+									</div>
+								</div>
+
+								<div class="project-intro">🔍  기술 스택</div>
+								<div class="stacks">
+									{article().stacks.map((data, index) => (
+										<li>{data}</li>
+									))}
+								</div>
+								<div class="project-intro">🔍 맡은 역할</div>
+								{article().develop_role.map((data, index) => (
+									<li>{data}</li>
+								))}
+								<div class="project-intro">🔍 개발 내용</div>
+								<ContentsList
+									contents={article().contents}
+								></ContentsList>
+								{article().architecture_image && (
+									<>
+										<div class="project-intro">
+											🎨 아키텍처 다이어그램
+										</div>
+										<img
+											className="architecture-image"
+											src={article().architecture_image}
+											alt="아키텍처 다이어그램"
+										/>
+									</>
+								)}
+								<ArticleStyle>
+									{article().develop_content}
+								</ArticleStyle>
+								<div class="project-intro">📝 정리 내용</div>
+								<div className="blogCard-links">
+									{article().blog.map((blogItem, index) => (
+										<BlogCard key={index} {...blogItem} />
+									))}
+								</div>
+								<div class="project-description">
+									💡 서비스에 대해 더 궁금하시다면
+									<StyledLink href={article().github}>
+										<FontAwesomeIcon icon={faLink} /> Github
+									</StyledLink>{" "}
+									에서 확인하실 수 있습니다.
+								</div>
 							</div>
 						</div>
 					</div>

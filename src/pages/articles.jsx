@@ -19,6 +19,9 @@ const Articles = () => {
 
 	const currentSEO = SEO.find((item) => item.page === "experiences");
 
+	const educationArticles = myArticles.slice(0, 2);
+	const prizeArticles = myArticles.slice(2, 4);
+
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -51,13 +54,13 @@ const Articles = () => {
 						<div className="articles-container">
 							<h2>Education</h2>
 							<div className="articles-wrapper">
-								{myArticles.map((article, index) => (
+								{educationArticles.map((article, index) => (
 									<div
 										className="articles-article"
-										key={(index + 1).toString()}
+										key={index.toString()}
 									>
 										<Article
-											key={(index + 1).toString()}
+											key={index.toString()}
 											date={article().date}
 											title={article().title}
 											description={article().description}
@@ -70,17 +73,17 @@ const Articles = () => {
 						<div className="articles-container">
 							<h2>Prize</h2>
 							<div className="articles-wrapper">
-								{myArticles.map((article, index) => (
+								{prizeArticles.map((article, index) => (
 									<div
 										className="articles-article"
-										key={(index + 1).toString()}
+										key={index.toString()}
 									>
 										<Article
-											key={(index + 1).toString()}
+											key={(index + 3).toString()}
 											date={article().date}
 											title={article().title}
 											description={article().description}
-											link={"/article/" + (index + 1)}
+											link={"/article/" + (index + 3)}
 										/>
 									</div>
 								))}

@@ -24,7 +24,7 @@ const INFO = {
 	about: {
 		title: "Choi Jong Myung",
 		job: "Backend Developer",
-		description: "안녕하세요.",
+		description: "안녕하세요. 백엔드 개발자 최종명 입니다.",
 	},
 
 	articles: {
@@ -38,7 +38,7 @@ const INFO = {
 			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/414cfc54-325c-4547-8ac6-5a8cb33beece",
 			period: "23.10.10 ～ 23.11.24",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "/projects/1",
 		},
 
 		{
@@ -47,7 +47,7 @@ const INFO = {
 			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/4fc25403-9f77-4203-8695-61c61755ae6b",
 			period: "23.08.28 ～ 23.10.06",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "/projects/2",
 		},
 
 		{
@@ -57,7 +57,7 @@ const INFO = {
 			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/24a283da-70d9-45ae-81a2-c3b6bafdda3f",
 			period: "23.08.12 ～ 23.09.17",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "/projects/3",
 		},
 
 		{
@@ -66,7 +66,7 @@ const INFO = {
 			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/1a61e7b7-47ec-4312-826f-bf54a9b1410d",
 			period: "23.07.08 ～ 23.08.18",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "/projects/4",
 		},
 
 		{
@@ -75,7 +75,7 @@ const INFO = {
 			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/4a11114f-8611-442b-afa5-b4c457ac24bb",
 			period: "23-05-12 ～ 23.05.25",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "/projects/5",
 		},
 		{
 			title: "Virtual Fitting",
@@ -83,7 +83,7 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			period: "22.03.02 ～ 22.10.01",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "/projects/6",
 		},
 	],
 };

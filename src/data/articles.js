@@ -57,10 +57,10 @@ function article_2() {
 		),
 	};
 }
-function article_3() {
+function prize_1() {
 	return {
 		date: "2023.09",
-		title: "신한은행 해커톤",
+		title: "신한은행 해커톤 우수상",
 		description: "신한은행 해커톤 우수상 (3위 / 190팀)",
 		style: ``,
 		keywords: [
@@ -76,7 +76,7 @@ function article_3() {
 		),
 	};
 }
-function article_4() {
+function prize_2() {
 	return {
 		date: "2023.08",
 		title: "SSAFY 우수 프로젝트",
@@ -96,6 +96,6 @@ function article_4() {
 	};
 }
 
-const myArticles = [article_1, article_2];
+const myArticles = [article_1, article_2, prize_1, prize_2];
 
 export default myArticles;

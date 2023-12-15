@@ -20,13 +20,14 @@
 	height: 100%;
 	margin: 0;
 	padding-top: 120px;
+	justify-content: center;
 }
 
 .read-article-back {
-	padding-top: 68px;
-	padding-right: 50px;
-	width: 40px;
-	height: 40px;
+	padding-top: 82px;
+	margin-right: 40px;
+	width: 30px;
+	height: 30px;
 }
 
 .read-article-back-button {
@@ -40,22 +41,23 @@
 	padding-top: 30px;
 }
 
-.read-article-date-container {
-	border-left: 2px solid var(--quaternary-color);
-	color: var(--tertiary-color);
+.read-article-info-container {
+	color: #595959;
 	font-size: 16 px;
 	align-items: center;
-	height: 22px;
+	margin-top: 20px;
 }
 
 .read-article-date {
 	font-family: var(--primary-font);
 	padding-left: 15px;
+	padding-bottom: 6px;
+	font-weight: 500;
 }
 
 .read-article-title {
 	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 	width: 100% !important;
 }
 
@@ -65,4 +67,71 @@
 	line-height: 30px;
 	font-family: system-ui;
 	color: #52525b;
+}
+
+.read-article-body .project-description {
+	margin-top: 16px;
+	background: #f1f3f5;
+	padding: 10px;
+	border-radius: 20px;
+}
+.article-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+* {
+	font-family: Pretendard !important;
+}
+
+.randImage {
+	align-self: center;
+	outline: 2px solid red;
+}
+
+.project-link {
+	display: flex;
+	align-items: center;
+	color: var(--secondary-color);
+	font-size: 12px;
+	padding-top: 20px;
+}
+
+.project-link-icon {
+	padding-left: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration-line: yellow;
+}
+
+.project-image {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.architecture-image {
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.read-article-wrapper {
+		width: 100%;
+	}
+}
+
+.read-article-body ul {
+	padding-left: 20px; /* 기본적인 들여쓰기 조절 */
+	margin-left: 0; /* 왼쪽 마진 제거 */
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.project-intro {
+	color: #333; /* 글자 색상은 이미지에 맞게 조정 */
+	font-size: 25px; /* 글자 크기는 이미지에 맞게 조정 */
+	font-weight: bold; /* 글자 두께는 이미지에 맞게 조정 */
+	padding-left: 10px; /* 선과 텍스트 사이의 간격 */
+	margin: 20px 0; /* 위아래 여백 */
+	background-color: #f8f1e7; /* 배경색을 이미지의 배경색과 유사하게 설정 */
+	padding: 5px;
 }

@@ -31,14 +31,13 @@ const Notfound = () => {
 								Oops! <FontAwesomeIcon icon={faFaceSadTear} />
 							</div>
 							<div className="not-found-message">
-								We can't seem to find the page you're looking
-								for.
+								페이지를 찾을 수 없습니다.
 								<br />
-								The requested URL "{window.location.href}" was
-								not found on this server.
+								요청하신 주소 "{window.location.href}" 는 잘못된
+								주소 입니다.
 							</div>
 							<a href="/" className="not-found-link">
-								Go back to the home page
+								홈으로 돌아가기
 							</a>
 						</div>
 					</div>

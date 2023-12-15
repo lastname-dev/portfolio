@@ -10,6 +10,7 @@ import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/about.css";
+import Stacks from "../components/homepage/stack";
 
 const About = () => {
 	useEffect(() => {
@@ -49,7 +50,15 @@ const About = () => {
 								</div>
 								<div className="subtitle about-subtitle">
 									{INFO.about.description}
+									<br></br>
+									코드를 작성하는 것만큼이나 그것을 최적화하고
+									더욱 효율적으로 만드는 과정에서 큰 만족을
+									느낍니다. <br></br>복잡한 문제를 해결하는
+									것을 좋아하고 그 경험을 공유하는 것도
+									좋아합니다.
 								</div>
+								<br></br>
+								<Stacks></Stacks>
 							</div>
 
 							<div className="about-left-side">
@@ -62,7 +71,6 @@ const About = () => {
 										/>
 									</div>
 								</div>
-
 								<div className="about-socials">
 									<Socials />
 								</div>

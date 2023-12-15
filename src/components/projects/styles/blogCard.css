@@ -1,0 +1,50 @@
+.blogCard-links {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+}
+
+.blogCard {
+	width: 200px;
+	margin: 1rem;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+	outline-color: lightgray;
+}
+
+.blogCard-body {
+	display: flex;
+	flex-direction: column;
+	height: 100%; /* 카드의 높이를 100%로 설정하여 내부에서 공간 분배 가능하게 함 */
+	padding: 17px; /* 패딩을 추가하여 내용과 경계 사이의 공간을 만듦 */
+}
+
+.blogCard-link {
+	align-self: flex-end; /* 링크를 카드 하단에 위치시킴 */
+	color: #6cb5f9;
+	text-decoration: none;
+}
+
+.blogCard-title {
+	font-size: 1rem;
+	font-weight: bold;
+	text-align: left;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.blogCard-text {
+	font-size: 0.9rem;
+	color: gray;
+	margin: 0;
+	margin-bottom: auto;
+	flex: 1;
+}
+
+.blogCard-link:hover {
+	text-decoration: underline;
+}
