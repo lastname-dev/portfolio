@@ -35,7 +35,7 @@ const INFO = {
 		{
 			title: "M Z B R",
 			description: "숏폼으로 맛집 리뷰를 제공하는 서비스",
-			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/414cfc54-325c-4547-8ac6-5a8cb33beece",
+			logo: "./food.png",
 			period: "23.10.10 ～ 23.11.24",
 			linkText: "View Project",
 			link: "/projects/1",
@@ -54,7 +54,7 @@ const INFO = {
 			title: "Share Account",
 			description:
 				"모임통장으로 여행의 시작부터 끝까지 책임지는 은행 서비스",
-			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/24a283da-70d9-45ae-81a2-c3b6bafdda3f",
+			logo: "./bank.png",
 			period: "23.08.12 ～ 23.09.17",
 			linkText: "View Project",
 			link: "/projects/3",
@@ -63,7 +63,7 @@ const INFO = {
 		{
 			title: "VoteSkill",
 			description: "음성 및 화상으로 즐길 수 있는 웹 마피아 게임",
-			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/1a61e7b7-47ec-4312-826f-bf54a9b1410d",
+			logo: "./gun.png",
 			period: "23.07.08 ～ 23.08.18",
 			linkText: "View Project",
 			link: "/projects/4",
@@ -80,7 +80,7 @@ const INFO = {
 		{
 			title: "Virtual Fitting",
 			description: "가상 피팅 서비스를 제공하는 웹 쇼핑몰",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			logo: "./clothes.png",
 			period: "22.03.02 ～ 22.10.01",
 			linkText: "View Project",
 			link: "/projects/6",
