@@ -47,6 +47,110 @@ function article_1() {
 					실무적인 지식과 경험은 제 개발 커리어에 큰 자산이
 					되었습니다.
 				</p>
+			</React.Fragment>
+		),
+		contents: [
+			{
+				title: "식당 데이터 수집",
+				description:
+					"식당 데이터 수집 과정에서 공공 데이터는 잘 사용하지 않는 TM 좌표계를 제공하는 문제점이 있었습니다.",
+				description2: [
+					"CSV 파일에서 데이터들을 추출하고 카카오 API를 이용하여 이를 위경도로 변환하여 RDB와 Elasticsearch에 저장하였습니다.",
+				],
+			},
+			{
+				title: "검색 성능 130배 개선",
+				description:
+					"실행계획 분석을 통해 형태소 단위의 검색이나 위치 반경 데이터를 검색할 때 인덱스가 적용되지 않아 Full Scan이 발생함을 확인했습니다.",
+				description2: [
+					"MySQL의 공간인덱스를 적용하여 위경도 기반 검색 성능을 향상 시켰습니다.",
+					"Elasticsearch를 도입하여 Nori Tokenizer를 활용한 형태소 분석 및 Geo Point를 통하여 위치 검색 성능 대폭 향상시켰습니다.",
+				],
+			},
+			{
+				title: "인증 서비스 분리",
+				description:
+					"MSA 환경에서 인증 처리를 위해 서버마다 인증 서비스를 중복해서 구현해야 한다는 번거로움이 있었습니다. ",
+				description2: [
+					"AWS API Gateway와 Lambda Authorizer를 이용하여 인증 로직을 서버리스 함수로 분리하여 관리하였습니다.",
+					"통합된 인증을 통해 중앙 집중화된 아키텍처를 구성하였고 확장성 있는 서비스를 구축하였습니다.",
+				],
+				image: "../authorizer.png",
+			},
+			{
+				title: "모니터링 및 시각화",
+				description:
+					"ELK 스택을 도입하여 Logstash로 Spring 서버의 로그를 가공하여 Elasticsearch에 적재하고 Kibana로 시각화 하였습니다.",
+				description2: [],
+			},
+		],
+		blog: [
+			{
+				title: "AWS Lambda Authorizer",
+				description: "API Gateway와 Lambda 를 이용한 통합 인증 ",
+				link: "https://velog.io/@ch0jm/AWS-Lambda-Authorizer-%EB%A1%9C-JWT-%EA%B2%80%EC%A6%9D",
+				linkText: "Read more",
+			},
+			{
+				title: "식당 검색 성능 개선기",
+				description: "MySQL 공간 인덱스를 이용한 성능 측정 및 개선 ",
+				link: "https://velog.io/@ch0jm/7asl837m",
+				linkText: "Read more",
+			},
+			{
+				title: "Elasitcsearch 적용기",
+				description: "로그 수집 및 검색 엔진으로 Elasticsearch 도입 ",
+				link: "https://velog.io/@ch0jm/h844r002",
+				linkText: "Read more",
+			},
+		],
+	};
+}
+
+function article_2() {
+	return {
+		period: "2023.10.10 ~ 2023.11.24 (7주)",
+		title: "MZBR",
+		description: "숏폼을 활용한 맛집 리뷰를 제공하는 사이트",
+		linkcolor: "#d6f0ff",
+		hovercolor: "#6cb5f9",
+		github: "https://github.com/MZBR-2023",
+		stacks: [
+			"Java, Spring Boot, Spring Security, Spring Data JPA",
+			"MySQL, Redis, Elasticsearch",
+			"AWS EC2, RDS, S3, Lambda, API Gateway",
+			"Kibana, Logstash, Spring Docs ",
+		],
+		develop_role: [
+			"Spring Security를 이용한 OAuth2.0, JWT 방식의 인증/인가",
+			"AWS Lambda를 이용한 API Gateway Authorizer 구현",
+			"회원 관련 API (로그인/로그아웃, 회원가입, 회원 조회, 구독)",
+			"식당 관련 API (Elasticsearch를 이용한 주변 식당 조회, 키워드 기반 조회)",
+			"영상 조회 API (특정 식당의 리뷰 영상 조회, 주변 식당의 영상 조회)",
+			"식당 데이터 크롤링 (공공데이터, 카카오 API 이용)",
+		],
+		keywords: ["Spring Boot", "Elasticsearch", "AWS Lambda", "API Gateway"],
+		role: "백엔드 개발",
+		team: "6명 (FE 2, BE 2, Infra 2)",
+		thumbnail_image: "../MZBR.png", // 썸네일 이미지 URL 필요
+		architecture_image: "../MZBR_architecure.png", // 아키텍처 다이어그램 이미지 URL 필요
+		long_description: (
+			<React.Fragment>
+				<p>
+					💡 MZBR은 숏폼을 활용한 맛집 리뷰를 제공하는 서비스입니다.
+				</p>
+			</React.Fragment>
+		),
+		review: (
+			<React.Fragment>
+				<h3>프로젝트 성과</h3>
+				<p>
+					이 프로젝트에서의 경험은 제 개발 역량을 크게 향상시켰습니다.
+					특히, Elasticsearch를 통한 검색 최적화와 AWS를 활용한 서비스
+					분리는 뛰어난 학습 경험이었습니다. 프로젝트를 통해 얻은
+					실무적인 지식과 경험은 제 개발 커리어에 큰 자산이
+					되었습니다.
+				</p>
 				{/* 기타 프로젝트 리뷰 내용 */}
 			</React.Fragment>
 		),
@@ -92,213 +196,6 @@ function article_1() {
 				linkText: "Read more",
 			},
 		],
-	};
-}
-
-function article_2() {
-	return {
-		period: "2023.08 ~ 2023.10 (7주)",
-		title: "💸 Emotion Bank",
-		description: "감정을 금액으로 수치화해 보관하는 은행 서비스",
-		linkcolor: "#fdc3c4",
-		hovercolor: "#FF533B",
-		links: [
-			{
-				info: "영상 URL",
-				url: "https://youtu.be/6WSHhNuqmHE",
-			},
-			{
-				info: "Github URL",
-				url: "https://github.com/jxixeun/EmotionBank",
-			},
-		],
-		stacks: [
-			"Java, Spring Boot, Gradle",
-			"MySQL, MongoDB, Spring Data JPA",
-			"Amazon EC2, Docker, Jenkins, SonarQube, FCM, Git, Github, Jira",
-		],
-		develop_role: [
-			"데이터베이스 설계 참여",
-			"계좌 생성 및 잔액 조회, 계좌명 수정",
-			"일별 기분 저장 및 년월 단위로 조회",
-			"알림 생성 및 발송, 저장",
-			"Jenkins와 Docker를 이용해 배포 진행",
-			"SonarQube 적용",
-		],
-		keywords: [
-			"Spring Boot",
-			"Tharindu",
-			"Tharindu N",
-			"Tharindu Nayanajith",
-		],
-		role: "팀장, 백엔드 개발, 인프라",
-		team: "팀 프로젝트 (BE 4, FE 2)",
-		thumbnail_image: "../emotionbank-thumbnail.png",
-		architecture_image:
-			"https://github.com/EmotionBank/EmotionBank/assets/102013524/fdd47292-8d05-40da-b12c-a2d9d0655eb7",
-		long_description:
-			"Emotion Bank는 유저가 자신의 감정을 금액으로 환산해 입출금할 수 있는 서비스입니다. 금융 서비스와 SNS를 접목시켜 돈이 아닌 감정을 입출금하고 이체를 통해 친구와 공유하는 서비스를 개발했습니다. 유저는 감정을 Emotion Bank에 저장할 수 있습니다. 자신의 감정을 친구에게 이체를 통해 전달할 수 있으며 긍정적인 감정은 입금, 부정적인 감정은 출금이 됩니다.",
-		develop_content: (
-			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					Business
-					<ul>
-						<li>
-							사용자는 자신의 입출금 계좌를 1개 개설할 수
-							있습니다.
-							<ul>
-								<li>
-									계좌 개설 시 계좌번호가 생성되며, 다른
-									회원의 계좌 번호와 중복되지 않아야합니다.
-								</li>
-							</ul>
-						</li>
-						<li>
-							사용자의 일별 대표 기분을 월 단위로 조회할 수
-							있습니다.
-						</li>
-						<li>
-							사용자는 자신이 로그인한 모든 기기에서 알림을 받을
-							수 있습니다.
-							<ul>
-								<li>
-									알림은 전체 알림과 개인 알림 두 종류가
-									존재합니다.
-								</li>
-								<li>
-									전체 알림 생성은 관리자만 할 수 있습니다.
-								</li>
-								<li>
-									알림의 양식은 보내는 종류에 따라 다릅니다.
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					Tech
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>
-							전체 알림 생성은 ‘ADMIN’ 타입의 회원만 가능합니다.
-						</li>
-						<li>AWS EC2로 배포합니다.</li>
-						<li>
-							서버는 Docker와 Jenkins를 사용해 Github의 브랜치에
-							push시 자동으로 배포되도록 합니다.
-						</li>
-						<li>SonarQube를 사용해 정적 코드 분석을 진행합니다.</li>
-						<li>
-							localStorage에 토큰을 저장하기 때문에 XSS 방어를
-							진행합니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>
-					계좌 번호가 겹치지 않게 하기 위해 생성 시간의 timestamp를
-					이용해 생성
-				</li>
-				<li>
-					데이터 베이스의 경우
-					<ul>
-						<li>계좌와 일별 기분 데이터는 MySQL에 저장</li>
-						<li>
-							양식이 없고 종류마다 다른 알림 데이터의 경우
-							MongoDB에 저장
-						</li>
-						<li>JPA를 이용해 데이터베이스 조회</li>
-					</ul>
-				</li>
-				<li>
-					알림 서비스를 위해 Firebase Cloud Messaging 사용
-					<ul>
-						<li>
-							로그인 할 때마다 디바이스 토큰을 저장하도록 함 →
-							유저의 모든 기기에 알림이 가도록 함
-						</li>
-						<li>
-							새로운 토큰을 저장할 때, 전체 알림을 위해 notice
-							Topic을 구독하도록 설정
-						</li>
-						<li>
-							개인 알림의 경우 디바이스 토큰을 이용해서 발송, 전체
-							알림의 경우 notice topic을 구독하고 있는 토큰에게
-							전송
-						</li>
-					</ul>
-				</li>
-				<li>
-					Github의 Webhook을 이용해 브랜치에 push시 자동으로
-					배포되도록 Jenkins pipeline 작성
-					<ul>
-						<li>Dockerfile을 이용해 이미지 빌드 후 배포 진행</li>
-					</ul>
-				</li>
-				<li>
-					pipeline의 build 단계 이후 SonarQube 정적 코드 분석 진행
-				</li>
-				<li>
-					Naver의 lucy xss filter를 이용해 XSS 방어 설정
-					<ul>
-						<li>
-							MessageConverter에 처리할 문자열이 설정되어있는
-							Object Mapper를 등록해 JSON 데이터의 XSS 방어 설정
-							진행
-						</li>
-					</ul>
-				</li>
-			</React.Fragment>
-		),
-		review: (
-			<React.Fragment>
-				<h3>데이터 저장 방법에 대한 토론</h3>
-				<p>
-					팀원들과 함께 이체의 경우 데이터를 어떻게 저장할지에 대해
-					토론을 했습니다. 생각한 방법은
-					<br />
-					1. 이체라는 타입을 만들어서 저장. <br />
-					2. 입금/출금 두 가지로 나뉘어서 저장. <br />
-					3. 입금/출금 두가지로 나눠서도 저장하고 이체도 저장해서 총
-					3번의 데이터 저장. <br />
-					시중 은행 개발자분을 만나 데이터베이스 설계에 대해 자문을
-					구했으며, 많은 고민 끝에 거래내역 조회와 같은 부분에서
-					편리하게 하기 위해 2번의 방법을 선택했습니다.
-				</p>
-				<h3>겹치지 않게 하기 위해 Timestamp를 사용</h3>
-				<p>
-					UUID를 사용할수도 있지만, 계좌 번호의 경우 숫자로
-					이루어져있는 것이 보편적이기 때문에 숫자로 이루어진 번호를
-					생성하고 싶었습니다. <br />
-					시중 은행 개발자분께 겹치지 않게 하기 위해선 Timestamp를
-					이용하는 것이 좋다는 조언을 듣고, Timestamp를 이용해
-					yyMM-ddHH-mmssSSS 형식의 계좌 번호를 생성했습니다.
-				</p>
-				<h3>비정형 데이터를 저장하기 위해 MongoDB 사용</h3>
-				<p>
-					RDBMS를 주로 사용하다가 처음으로 MongoDB를 사용해보았습니다.
-					RDBMS와 비교했을 때 장단점이 명확하기 때문에 데이터의 특성에
-					맞는 DB를 선택해야 된다는 것을 알게되었습니다.
-				</p>
-				<h3>정적 코드 분석을 위해 SonarQube 사용</h3>
-				<p>
-					정적 코드 분석 도구인 SonarQube를 연동해서 사용했습니다. 
-					코드리뷰를 진행하였지만 백엔드 코드의 경우 CodeSmell이
-					200개에 가까운 결과가 나왔습니다.  가독성 있고 유지보수하기
-					쉬운 코드를 작성하기 위해 앞으로 더욱 노력해야겠다고
-					생각했습니다.
-				</p>
-				<h3>Github Issue 사용</h3>
-				<p>
-					Github의 Issue를 사용해서 개발을 진행했습니다. 먼저 개발할
-					기능에 대해 Issue를 작성하고, PR에 Issue를 연결하는 방식으로
-					진행했습니다. 먼저 Issue를 작성하며 구현할 기능을
-					정리함으로써 개발을 좀 더 빠르고 정확하게 할 수 있었습니다.
-				</p>
-			</React.Fragment>
-		),
 	};
 }
 

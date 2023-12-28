@@ -102,13 +102,13 @@ const ReadArticle = () => {
 									</div>
 								</div>
 
-								<div class="project-intro">🔍  기술 스택</div>
+								<div class="project-intro">🔍 기술 스택</div>
 								<div class="stacks">
 									{article().stacks.map((data, index) => (
 										<li>{data}</li>
 									))}
 								</div>
-								<div class="project-intro">🔍 맡은 역할</div>
+								<div class="project-intro">🔍 맡은 역할</div>
 								{article().develop_role.map((data, index) => (
 									<li>{data}</li>
 								))}
