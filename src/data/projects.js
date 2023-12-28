@@ -6,6 +6,7 @@ import React from "react";
 function article_1() {
 	return {
 		period: "2023.10.10 ~ 2023.11.24 (7주)",
+		video: "https://www.youtube.com/watch?v=7CbTL1GAmvE",
 		title: "MZBR",
 		description: "숏폼을 활용한 맛집 리뷰를 제공하는 사이트",
 		linkcolor: "#d6f0ff",
@@ -109,35 +110,36 @@ function article_1() {
 
 function article_2() {
 	return {
-		period: "2023.10.10 ~ 2023.11.24 (7주)",
-		title: "MZBR",
-		description: "숏폼을 활용한 맛집 리뷰를 제공하는 사이트",
+		period: "2023.08.28 ~ 2023.10.06 (7주)",
+		video: "https://www.youtube.com/watch?v=6WSHhNuqmHE",
+		title: "Emotion Bank",
+		description: "감정을 금액으로 환산하여 입출금 하는 서비스",
 		linkcolor: "#d6f0ff",
 		hovercolor: "#6cb5f9",
-		github: "https://github.com/MZBR-2023",
+		github: "https://github.com/EmotionBank/EmotionBank",
 		stacks: [
-			"Java, Spring Boot, Spring Security, Spring Data JPA",
-			"MySQL, Redis, Elasticsearch",
-			"AWS EC2, RDS, S3, Lambda, API Gateway",
-			"Kibana, Logstash, Spring Docs ",
+			"Java, Spring Boot, Spring Data JPA, Spring Cloud",
+			"MySQL, Redis, MongoDB",
+			"AWS EC2, RDS, S3, Jenkins, Nginx, Docker",
+			"SonarQube, Grafana, Prometheus, JMeter ",
 		],
 		develop_role: [
-			"Spring Security를 이용한 OAuth2.0, JWT 방식의 인증/인가",
-			"AWS Lambda를 이용한 API Gateway Authorizer 구현",
-			"회원 관련 API (로그인/로그아웃, 회원가입, 회원 조회, 구독)",
-			"식당 관련 API (Elasticsearch를 이용한 주변 식당 조회, 키워드 기반 조회)",
-			"영상 조회 API (특정 식당의 리뷰 영상 조회, 주변 식당의 영상 조회)",
-			"식당 데이터 크롤링 (공공데이터, 카카오 API 이용)",
+			"유저 관련 API (유저 페이지, 유저 검색, 정보 수정/조회, 팔로우) ",
+			"거래 리포트 API",
+			"피드 API",
+			"이체 API",
+			"JMeter를 활용한 부하테스트",
 		],
 		keywords: ["Spring Boot", "Elasticsearch", "AWS Lambda", "API Gateway"],
 		role: "백엔드 개발",
-		team: "6명 (FE 2, BE 2, Infra 2)",
-		thumbnail_image: "../MZBR.png", // 썸네일 이미지 URL 필요
-		architecture_image: "../MZBR_architecure.png", // 아키텍처 다이어그램 이미지 URL 필요
+		team: "6명 (FE 2, BE 4)",
+		thumbnail_image: "../EmotionBank.png", // 썸네일 이미지 URL 필요
+		architecture_image: "../EB_architecture.png", // 아키텍처 다이어그램 이미지 URL 필요
 		long_description: (
 			<React.Fragment>
 				<p>
-					💡 MZBR은 숏폼을 활용한 맛집 리뷰를 제공하는 서비스입니다.
+					💡 EmotionBank는 감정을 금액으로 환산하여 입출금하는 서비스
+					입니다.
 				</p>
 			</React.Fragment>
 		),
@@ -151,48 +153,60 @@ function article_2() {
 					실무적인 지식과 경험은 제 개발 커리어에 큰 자산이
 					되었습니다.
 				</p>
-				{/* 기타 프로젝트 리뷰 내용 */}
 			</React.Fragment>
 		),
 		contents: [
 			{
-				title: "데이터 수집",
+				title: "데이터의 무결성",
 				description:
-					"식당 정보 수집 과정에서 공공 데이터는 잘 사용하지 않는 TM 좌표계를 제공하는 문제점이 있었습니다. 이를 위경도로 변환하여 RDB 및 Elasticsearch에 저장하였습니다.",
+					"이체, 입금과 같은 거래 요청 시 중복 요청이나 악의적인 요청을 하여 데이터의 무결성이 깨지는 문제상황이 발생하였습니다.",
+				description2: [
+					"이를 해결하기 위해 Redis의 분산락을 적용하여 중복(따닥) 요청을 방지 하였습니다.",
+					"이체, 입금과 같은 요청에서 악의적인 금액 수정을 방지하기 위해서 요청시 남은 금액을 함께 전송하도록 하여 검증 과정을 거쳤습니다. ",
+				],
 			},
 			{
-				title: "검색 성능 16배 개선",
+				title: "코드 품질 향상",
 				description:
-					"RDB에서 위치 기반 키워드 검색을 진행할 때 매우 느린 성능을 보여주고 있었습니다. 이를 Elasticsearch를 도입하고 Nori Tokenizer를 통한 형태소 분석 및 Geo_point를 통한 위치 검색으로 대폭 향상시켰습니다.",
+					"다양한 방법으로 코드 품질 향상을 위해 노력하였습니다.",
+				description2: [
+					"SonarQube 를 이용한 코드 분석, 깃 커밋, 코딩 컨벤션 , Issue PR 을 통한 코드 리뷰 등 을 진행하며 팀의 생산성과 코드의 품질을 높일 수 있었습니다.",
+					"레이어 간 DTO 를 구분하고, Inner Class와 정적 팩토리 메서드 패턴을 통해 DTO를 정의하여 객체지향 원칙을 준수하며 DTO 를 설계하였습니다.",
+				],
 			},
 			{
-				title: "인증 서비스 분리",
+				title: "모니터링 및 부하테스트",
 				description:
-					"MSA 환경에서 인증 처리를 위해 서버마다 인증 서비스를 중복해서 구현해야 한다는 번거로움이 있었습니다. AWS API Gateway와 Lambda Authorizer를 이용하여 인증 로직을 서버리스 함수로 분리하여 관리하였습니다.",
+					"Prometheus, Grafana 를 이용한 모니터링, JMeter를 이용한 부하테스트를 진행하며 어플리케이션의 성능 및 상태를 가시적으로 확인하고 성능 향상을 할 수 있었습니다. ",
+				description2: [],
 			},
 			{
-				title: "모니터링 및 시각화",
+				title: "테스트 코드",
 				description:
-					"ELK 스택을 도입하여 Logstash로 Spring 서버의 로그를 가공하여 Elasticsearch에 적재하고 Kibana로 시각화 하였습니다.",
+					"테스트 코드 작성을 통한 안정적인 개발을 진행하였습니다.",
+				description2: [
+					"Junit과 Spring의 테스트 모듈을 이용하여 단위테스트 및 통합테스트를 진행 하였습니다.",
+					"Mock과 Stub에 대해 이해하고 상황에 따라 적절히 사용하여 테스트를 진행 하였습니다.",
+				],
 			},
 		],
 		blog: [
 			{
-				title: "AWS Lambda Authorizer",
-				description: "API Gateway와 Lambda 를 이용한 통합 인증 ",
-				link: "https://velog.io/@ch0jm/AWS-Lambda-Authorizer-%EB%A1%9C-JWT-%EA%B2%80%EC%A6%9D",
+				title: "작성중...",
+				description: "작성중...",
+				link: "https://velog.io/@ch0jm",
 				linkText: "Read more",
 			},
 			{
-				title: "식당 검색 성능 개선기",
-				description: "MySQL 공간 인덱스를 이용한 성능 측정 및 개선 ",
-				link: "https://velog.io/@ch0jm/7asl837m",
+				title: "작성중...",
+				description: "작성중...",
+				link: "https://velog.io/@ch0jm",
 				linkText: "Read more",
 			},
 			{
-				title: "Elasitcsearch 적용기",
-				description: "로그 수집 및 검색 엔진으로 Elasticsearch 도입 ",
-				link: "https://velog.io/@ch0jm/h844r002",
+				title: "작성중...",
+				description: "작성중...",
+				link: "https://velog.io/@ch0jm",
 				linkText: "Read more",
 			},
 		],

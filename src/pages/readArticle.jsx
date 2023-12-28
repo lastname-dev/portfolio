@@ -100,6 +100,13 @@ const ReadArticle = () => {
 									<div className="read-article-date">
 										👤 인원 : {article().team}
 									</div>
+									<div className="read-article-date">
+										🎥 영상 :
+										<StyledLink href={article().video}>
+											<FontAwesomeIcon icon={faLink} />{" "}
+											link
+										</StyledLink>
+									</div>
 								</div>
 
 								<div class="project-intro">🔍 기술 스택</div>

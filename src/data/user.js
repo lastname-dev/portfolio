@@ -43,7 +43,7 @@ const INFO = {
 
 		{
 			title: "Emotion Bank",
-			description: "감정을 금액으로 환산하여 입출금하는 서비스",
+			description: "감정을 입출금하는 서비스",
 			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/4fc25403-9f77-4203-8695-61c61755ae6b",
 			period: "23.08.28 ～ 23.10.06",
 			linkText: "View Project",
@@ -52,8 +52,7 @@ const INFO = {
 
 		{
 			title: "Share Account",
-			description:
-				"모임통장으로 여행의 시작부터 끝까지 책임지는 은행 서비스",
+			description: "여행의 시작부터 끝까지 책임지는 공유 통장",
 			logo: "./bank.png",
 			period: "23.08.12 ～ 23.09.17",
 			linkText: "View Project",
@@ -62,7 +61,7 @@ const INFO = {
 
 		{
 			title: "VoteSkill",
-			description: "음성 및 화상으로 즐길 수 있는 웹 마피아 게임",
+			description: "음성과 화상으로 즐기는 웹 마피아 게임",
 			logo: "./gun.png",
 			period: "23.07.08 ～ 23.08.18",
 			linkText: "View Project",
@@ -79,7 +78,7 @@ const INFO = {
 		},
 		{
 			title: "Virtual Fitting",
-			description: "가상 피팅 서비스를 제공하는 웹 쇼핑몰",
+			description: "가상 피팅을 제공하는 웹 쇼핑몰",
 			logo: "./clothes.png",
 			period: "22.03.02 ～ 22.10.01",
 			linkText: "View Project",
