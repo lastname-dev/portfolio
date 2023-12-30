@@ -101,11 +101,19 @@ const ReadArticle = () => {
 										👤 인원 : {article().team}
 									</div>
 									<div className="read-article-date">
-										🎥 영상 :
-										<StyledLink href={article().video}>
-											<FontAwesomeIcon icon={faLink} />{" "}
-											link
-										</StyledLink>
+										{article().video && (
+											<>
+												🎥 영상 :
+												<StyledLink
+													href={article().video}
+												>
+													<FontAwesomeIcon
+														icon={faLink}
+													/>{" "}
+													link
+												</StyledLink>
+											</>
+										)}
 									</div>
 								</div>
 
@@ -119,7 +127,7 @@ const ReadArticle = () => {
 								{article().develop_role.map((data, index) => (
 									<li>{data}</li>
 								))}
-								<div class="project-intro">🔍 개발 내용</div>
+								<div class="project-intro">🔍 개발 성과</div>
 								<ContentsList
 									contents={article().contents}
 								></ContentsList>
@@ -135,15 +143,37 @@ const ReadArticle = () => {
 										/>
 									</>
 								)}
+								{article().erd_image && (
+									<>
+										<div class="project-intro">🎨 ERD</div>
+										<img
+											className="architecture-image"
+											src={article().erd_image}
+											alt="ERD"
+										/>
+									</>
+								)}
 								<ArticleStyle>
 									{article().develop_content}
 								</ArticleStyle>
-								<div class="project-intro">📝 정리 내용</div>
-								<div className="blogCard-links">
-									{article().blog.map((blogItem, index) => (
-										<BlogCard key={index} {...blogItem} />
-									))}
-								</div>
+								{article().blog && (
+									<>
+										<div class="project-intro">
+											📝 정리 내용
+										</div>
+										<div className="blogCard-links">
+											{article().blog.map(
+												(blogItem, index) => (
+													<BlogCard
+														key={index}
+														{...blogItem}
+													/>
+												)
+											)}
+										</div>
+									</>
+								)}
+
 								<div class="project-description">
 									💡 서비스에 대해 더 궁금하시다면
 									<StyledLink href={article().github}>

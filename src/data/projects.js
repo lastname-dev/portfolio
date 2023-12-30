@@ -215,840 +215,381 @@ function article_2() {
 
 function article_3() {
 	return {
-		period: "2023.05 (4주)",
-		title: "✈️ Ovtrip",
-		description: "간편한 여행 계획 관리 사이트",
-		linkcolor: "#fbec96",
-		hovercolor: "#F2B518",
-		links: [
-			{
-				info: "영상 URL",
-				url: "https://youtu.be/xXZT1JgYleg",
-			},
-			{
-				info: "Github URL",
-				url: "https://github.com/orgs/OvTrip/repositories",
-			},
-		],
+		period: "2023.08.19 ~ 2023.09.17 (4주)",
+		title: "Share Bank",
+		description: "여행의 시작부터 끝까지 책임지는 금융 서비스",
+		linkcolor: "#d6f0ff",
+		hovercolor: "#6cb5f9",
+		github: "https://github.com/lastname-dev/share-account-bank",
 		stacks: [
-			"Java, Spring Boot, Maven",
-			"Spring Cloud Open Feign",
-			"MyBatis, Amazon RDS(MySQL)",
-			"OAuth2.0, JWT",
-			"Vue.js",
+			"Java, Spring Boot, Spring Data JPA, Spring Security, Spring Cloud",
+			"MySQL, Redis",
+			"FCM",
+			"AWS EC2, RDS, S3, Nginx, Docker, Github Actions",
 		],
 		develop_role: [
-			"데이터베이스 설계 참여",
-			"회원가입 및 로그인",
-			"여행 계획 조회",
-			"공지사항 게시판",
-			"사용자 검색",
-			"메인, 로그인/회원가입, 마이페이지, 검색, 게시판 페이지 구현",
+			"Spring Security를 이용한 JWT 방식 인증",
+			"다양한 확인 절차 도입 (SMTP 서버를 통한 이메일 인증, 계좌 비밀번호, 소유주 확인)",
+			"그룹 관련 API (그룹 생성, 초대, 가입)",
+			"계좌 관련 API (계좌 생성, 조회, 이체, 대표계좌, 그룹계좌, 회비 납부, 정산)",
+			"Github Actions와 Docker를 이용한 CI/CD 파이프라인 구축",
+			"FCM을 통한 푸시 알림",
 		],
-		keywords: [
-			"Spring Boot",
-			"Tharindu",
-			"Tharindu N",
-			"Tharindu Nayanajith",
-		],
-		role: "팀장, 백엔드 개발, 프론트엔드 개발",
-		team: "팀 프로젝트 (BE/FE 2)",
-		thumbnail_image: "../ovtrip-thumbnail.png",
-		long_description:
-			"OvTrip은 편리하게 여행 계획을 짤 수 있는 여행 계획 관리 플랫폼입니다. 늘어난 여행 수요를 반영하여 여행자들이 보다 편리하게  여행 계획을 세울 수 있도록 하는 것을 목표로 하였습니다.유저는 원하는 기간을 선택해 날짜별 여행 계획을 짤 수 있습니다. 장소 선택시 직선 경로가 지도에 표시됩니다. 마이페이지에서 저장한 여행 계획을 볼 수 있습니다.",
-		develop_content: (
+		keywords: ["Spring Boot", "Elasticsearch", "AWS Lambda", "API Gateway"],
+		role: "백엔드 개발",
+		team: "4명 (기획 1, FE 1, BE 2)",
+		thumbnail_image: "../ShareBank.png", // 썸네일 이미지 URL 필요
+		architecture_image: "../SB_architecture.png", // 아키텍처 다이어그램 이미지 URL 필요
+		long_description: (
 			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					Business
-					<ul>
-						<li>
-							사용자는 카카오, 네이버 소셜 로그인을 이용해
-							회원가입, 로그인을 할 수 있습니다.
-							<ul>
-								<li>소셜 플랫폼은 확장 가능해야 합니다.</li>
-							</ul>
-						</li>
-						<li>
-							로그인 한 사용자는 가입된 유저를 검색할 수 있습니다.
-						</li>
-						<li>
-							자신이 생성한 여행 계획 목록을 확인할 수 있습니다.
-						</li>
-						<li>
-							사용자는 로그인 여부와 관계 없이 공지사항을 볼 수
-							있습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Tech
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>로그인은 JWT를 사용하여 진행합니다.</li>
-						<li>데이터베이스는 Amazon RDS를 사용합니다.</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>
-					JWT를 사용하여 OAuth2.0 소셜 로그인/회원가입 구현, 인증
-					인터셉터 구현을 진행했습니다.
-				</li>
-				<li>
-					소셜 로그인 구현시 플랫폼에 간편한 API 요청을 위해 Spring
-					Cloud OpenFeign을 사용했습니다.
-					<ul>
-						<li>
-							코드를 간결하게 작성하기 위해 소셜 플랫폼에 API를
-							요청할 때 Spring Cloud의 Feign Client를
-							사용했습니다.
-						</li>
-						<li>
-							다른 소셜 플랫폼에 대한 확장을 열어 두기 위해 소셜
-							플랫폼의 종류에 따라 구현된 서비스를 결정하도록
-							했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Vue.js를 이용해 프론트엔드 구현, Axios를 이용해 API 요청
-					<ul>
-						<li>
-							빠른 개발 진행을 위해 러닝커브가 낮은 프레임워크인
-							Vue.js를 사용했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Argument Resolver를 구현하여 Access Token에서 회원정보를
-					가져올 때 컨트롤러에서 파라미터로 쉽게 받을 수 있게 해
-					편의성을 늘렸습니다. (기존코드 3줄 -> 1줄)
-				</li>
-				<li>
-					Preflgiht에 Access token이 담겨있지 않아 API 호출 실패하던
-					에러 해결{" "}
-					<a href="https://xntifrxgile.tistory.com/70">
-						(해결 과정 정리글)
-					</a>
-					<ul>
-						<li>
-							Preflight는 HTTP OPTIONS으로 요청을 보내기 때문에,
-							HTTP OPTIONS에 대한 요청은 토큰 값 검증을 하지
-							않도록 변경했습니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ TO BE</h3>
-				<li>
-					삼성 청년 SW 아카데미 프로젝트 경진대회 우수상을 받았습니다.
-					(10팀 중 2등)
-				</li>
-				<h2>🏫 배운점</h2>
-				<li>
-					소셜 회원가입을 구현하며 OAuth2.0에 대해 이해할 수
-					있었습니다.
-				</li>
-				<li>Feign Client에 대해 학습할 수 있었습니다.</li>
-				<li>
-					인터셉터를 구현하며 API 요청 흐름을 이해할 수 있었습니다.
-				</li>
-				<li>
-					axios, vuex, router, 비동기에 대해 학습할 수 있었습니다.
-				</li>
-				<li>
-					Gitflow를 적용하여 기능마다 branch를 생성해 개발하며 Git에
-					대해 학습할 수 있었습니다.
-				</li>
+				<p>
+					💡 EmotionBank는 감정을 금액으로 환산하여 입출금하는 서비스
+					입니다.
+				</p>
 			</React.Fragment>
 		),
 		review: (
 			<React.Fragment>
-				<h3>첫 프론트엔드 개발</h3>
+				<h3>프로젝트 성과</h3>
 				<p>
-					프론트엔드 개발을 처음으로 경험하며 많은 것을 느꼈습니다.
-					프론트엔드가 어떤식으로 API를 요청하고 받아서 데이터를
-					출력하는지 등에 관한 것을 알게되었습니다. 어떤 식으로
-					데이터를 전해줘야 편한지와 같이 프론트엔드에 대해서 더욱
-					깊게 이해할 수 있었습니다.
-				</p>
-				<h3>소셜 로그인의 이해</h3>
-				<p>
-					OAuth2.0를 이해하고 구현할 수 있었습니다. 이번에 구현할 때,
-					Refresh Token과 Refresh Token의 만료 시간을 엔티티에
-					저장해서 사용했는데 이 경우 Refresh Token이 만료가
-					됐는지 만료 시간을 계속해서 검증하는 과정이
-					필요했습니다. Redis를 사용하는 경우, TTL을 이용하여 Refresh
-					Token이 만료되면 Redis에서 삭제되도록 구현할 수
-					있습니다.이러한 방식으로 구현하는 경우엔 Redis에 해당하는
-					데이터가 존재하는지 유무만 검사하면 되기
-					때문에 훨씬 편리하게 구현할 수 있다고 생각합니다. 다음엔
-					Refresh Token을 Redis에 저장하는 방식으로 구현해보고
-					싶습니다.
+					이 프로젝트에서의 경험은 제 개발 역량을 크게 향상시켰습니다.
+					특히, Elasticsearch를 통한 검색 최적화와 AWS를 활용한 서비스
+					분리는 뛰어난 학습 경험이었습니다. 프로젝트를 통해 얻은
+					실무적인 지식과 경험은 제 개발 커리어에 큰 자산이
+					되었습니다.
 				</p>
 			</React.Fragment>
 		),
+		contents: [
+			{
+				title: "토큰 방식 인증의 한계",
+				description:
+					"JWT는 무상태성을 가지고 토큰이 한번 발급되면 수정이 불가능하다는 보안적인 약점을 가지고 있습니다. 이에 따라 로그아웃 혹은 토큰이 탈취 되었을 때 문제 상황이 발생하였습니다.",
+				description2: [
+					"Access Token의 만료시간을 짧게 설정하고, Refresh Token을 이용하여 재발급 하도록 하였습니다. Redis의 TTL 을 적용하여 Refresh Token의 수명을 제어하였습니다.",
+					"Redis를 활용해 Blacklist 를 구현하여 특정 토큰을 무력화 시켰습니다.",
+				],
+			},
+			{
+				title: "다양한 인증 방식",
+				description:
+					"금융 도메인의 특성상 보안이 더욱 중요시 되기 때문에 보안을 고려하여 다양한 인증 방식을 사용하였습니다.",
+				description2: [
+					"SMTP 프로토콜을 활용한 이메일 인증, 계좌 1원 인증, 계좌비밀번호와 같은 인증 절차를 구현 하였습니다.",
+					"그룹 초대 시 3분의 유효기간을 가진 1회용 초대링크를 생성하여 보안에 유의하였습니다. ",
+				],
+			},
+			{
+				title: "금융 프로세스의 이해",
+				description:
+					"시중의 금융 업무 프로세스를 분석하고 이해하며 비슷하게 동작하도록 구현 하였습니다. ",
+				description2: [
+					"다양한 금융 현직자 분들과의 만남을 통해 시중의 은행서버의 아키텍처에 대해 파악하였습니다.",
+					"크게 계정계(은행업무), 정보계(로그수집), 채널계(모바일뱅킹)으로 이루어져있음을 파악하고 각 역할에 맞도록 채널계, 계정계, 정보계로 서버를 분리하여 구축하였습니다.",
+					"모든 요청은 채널계로 가도록 하였고, 계정계와 채널계는 Feign Client를 이용하여 통신하도록 구현하였습니다.",
+				],
+			},
+			{
+				title: "프록시 서버",
+				description:
+					"신한은행의 API 서버와 발생한 CORS 에러를 프록시 서버를 통하여 해결하였습니다.",
+				description2: [
+					"Client에서 API 서버에 요청시 CORS 에러가 발생하여 프록시 서버를 두어 중계하였습니다.",
+				],
+			},
+			{
+				title: "인프라 환경",
+				description:
+					"백엔드와 인프라를 전담하며 전체 아키텍처를 설계하고 인프라를 구축하였습니다.",
+				description2: [
+					"Github Actions와 Docker를 이용하여 CI / CD 파이프라인을 구축하였습니다.",
+					"각 역할에 맞게 서버를 분리하고 Nginx 를 이용하여 로드밸런싱 및 HTTPS를 적용하였습니다.",
+				],
+			},
+		],
+		blog: [
+			{
+				title: "Redis 블랙리스트",
+				description: "Redis를 이용한 JWT 블랙리스트 도입",
+				link: "https://velog.io/@ch0jm/lnwfrngd",
+				linkText: "Read more",
+			},
+			{
+				title: "Spring Security JWT 인증",
+				description: "Spring Security를 이용한 JWT 방식 인증 인가 구현",
+				link: "https://velog.io/@ch0jm/1suek2er",
+				linkText: "Read more",
+			},
+			{
+				title: "작성중...",
+				description: "작성중...",
+				link: "https://velog.io/@ch0jm",
+				linkText: "Read more",
+			},
+		],
 	};
 }
 
 function article_4() {
 	return {
-		period: "2023.10 ~ 2023.11 (7주)",
-		title: "🌱 EARA",
-		description: "탄소 중립 활동을 하며 환경 보호를 실천하는 서비스",
-		linkcolor: "#e8fd8b",
-		hovercolor: "#cbf58c",
-		links: [
-			{
-				info: "영상 URL",
-				url: "https://www.youtube.com/watch?v=8FcnqC_jvRc",
-			},
-			{
-				info: "Github URL",
-				url: "https://github.com/We-Eokam/Ea-ra",
-			},
-		],
+		period: "2023.07.14 ~ 2023.08.18 (7주)",
+		title: "VoteSkill",
+		description: "음성과 화상으로 즐길 수 있는 웹 마피아 게임",
+		video: "https://www.youtube.com/watch?v=j4NiSKCaPRE&feature=youtu.be",
+		linkcolor: "#d6f0ff",
+		hovercolor: "#6cb5f9",
+		github: "https://github.com/lastname-dev/VoteSKill",
 		stacks: [
-			"Java, Spring Boot, Gradle",
-			"MariaDB, Spring Data JPA",
-			"Spring Cloud, RabbitMQ",
-			"Amazon EC2, Amazon S3, Docker, Jenkins, Nginx, SonarQube, Jacoco, Git, Gitlab, Jira",
+			"Java, Spring Boot, Spring Data JPA, Spring Security",
+			"MySQL, Redis",
+			"WebRTC (OpenVidu)",
 		],
 		develop_role: [
-			"데이터베이스 설계 참여",
-			"서버 구조 설계 참여",
-			"Amazon S3를 이용한 파일 업로드 구현",
-			"활동으로 인한 재화 적립 서버 구현",
-			"환경 오염 활동 제보 서버 구현",
-			"Jenkins와 Docker를 이용해 배포 진행",
-			"SonarQube 적용",
+			"Spring Security를 이용한 Oauth2.0, JWT 방식 로그인 구현",
+			"스케줄러를 이용한 게임 진행 자동화",
+			"WebRTC 라이브러리 OpenVidu 커스텀을 통한 음성,화상 채팅 기능 구현",
+			"게임 스킬, 투표 처리 로직 구현",
+			"SSE를 이용한 통신",
+			"Redis를 이용한 게임 방 관리",
 		],
-		keywords: [
-			"Spring Boot",
-			"Tharindu",
-			"Tharindu N",
-			"Tharindu Nayanajith",
-		],
-		role: "백엔드 개발, 인프라",
-		team: "팀 프로젝트 (BE 3, FE 3)",
-		thumbnail_image: "../eara-thumbnail.png",
-		architecture_image: "../eara-ad.png",
-		long_description:
-			"EARA는 친구와 함께 탄소 중립 활동을 하며 환경 보호를 실천하는 서비스입니다. 탄소 중립 포인트와 연결하여, 사용자가 한 환경 보호 활동에 대해서 얼마나 많은 탄소 중립 포인트를 얻을 수 있는지 수치적으로 분석하고 그래프로 확인할 수 있습니다.",
-		develop_content: (
+		keywords: ["Spring Boot", "Elasticsearch", "AWS Lambda", "API Gateway"],
+		role: "백엔드 개발",
+		team: "6명 (FE 3, BE 2, Infra 1)",
+		thumbnail_image: "../Voteskill.png", // 썸네일 이미지 URL 필요
+		architecture_image: "../VS_architecture.png", // 아키텍처 다이어그램 이미지 URL 필요
+		long_description: (
 			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					<b>Business</b>
-					<ul>
-						<li>
-							제보장을 가진 사용자는 환경 오염을 한 친구를 제보할
-							수 있다.
-							<ul>
-								<li>
-									제보할 때는 대상, 제보 내용, 사진을 입력해야
-									한다.
-								</li>
-								<li>
-									제보 내용이 '기타'인 경우 제보 세부 내용을
-									사용자가 작성해야 한다.
-								</li>
-								<li>제보 시 제보장의 개수가 1개씩 줄어든다.</li>
-							</ul>
-						</li>
-						<li>회원은 자신이 받은 제보를 볼 수 있다</li>
-						<li>
-							다른 유저의 페이지에 갔을 때, 자신이 보낸 제보장만
-							볼 수 있다.
-						</li>
-						<li>
-							회원은 환경 보호 활동을 하거나 제보를 당함으로써
-							재화를 쌓거나 잃을 수 있다.
-						</li>
-						<li>
-							최근 일주일/한 달 간 적립된 일별 재화 양과 활동
-							횟수를 조회할 수 있다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<b>Tech</b>
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>
-							이미지 등록은 클라우드 서비스에 합니다. (Amazon S3)
-						</li>
-						<li>모든 기능은 로그인한 유저만 가능합니다.</li>
-						<li>AWS EC2에 Docker를 이용해 배포합니다.</li>
-						<li>
-							제보장의 개수는 User Service에 요청해서 줄여야
-							합니다.
-						</li>
-						<li>
-							제보를 한 뒤 해당하는 활동에 대한 재화 적립을
-							요청해야합니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>Amazon S3와 멀티파트를 이용해 파일 업로드 기능 구현</li>
-				<li>
-					MSA 구조로 백엔드 서버를 개발 (제보 서버, 적립 서버 구현)
-					<img
-						src="../eara-msa.png"
-						className="architecture-image"
-					></img>
-					<p>
-						(맡은 서버와 직접적으로 관련된 아키텍쳐만
-						나타나있습니다. 일부 로직이 생략되어있습니다. 실제로는
-						더 많은 서버가 있습니다.)
-					</p>
-					<ul>
-						<li>
-							속도 개선을 위해 통신 후 응답이 필요하지 않은 경우
-							비동기로 진행하기로 했습니다.   
-						</li>
-						<li>
-							요청이 누락되지 않게 하기 위해 메시지큐(RabbitMQ)를
-							사용했습니다.
-						</li>
-						<li>
-							응답이 필요한 경우 Feign Client를 사용하여 보다
-							간편하게 코드를 구현했습니다
-						</li>
-					</ul>
-				</li>
-				<li>
-					정적 코드 분석 및 테스트 커버리지 측정
-					<ul>
-						<li>
-							테스트 커버리지의 목표를 80%로 하고 테스트 코드를
-							작성했습니다.
-						</li>
-						<li>
-							Junit과 Mockito, Rest Assured를 이용해 테스트 코드를
-							작성했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					인수 테스트 주도 개발 진행
-					<a
-						className="eara-link"
-						href="https://github.com/We-Eokam/Ea-ra/blob/master/accusation/src/test/java/com/eokam/accusation/acceptance/AccusationAcceptanceTest.java"
-					>
-						[인수 테스트 코드 링크]
-					</a>
-					<ul>
-						<li>
-							휴먼 에러를 줄이고, 코드의 품질과 요구사항에 대한
-							이해를 높이기 위해  인수 테스트 주도 개발을
-							진행했습니다. 
-						</li>
-						<li>
-							가독성을 높이기 위해 한글 메서드 네이밍을
-							사용했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Github의 Webhook을 이용해 브랜치에 push시 자동으로
-					배포되도록 Jenkins pipeline 작성
-					<ul>
-						<li>Dockerfile을 이용해 이미지 빌드 후 배포 진행</li>
-					</ul>
-				</li>
-				<h2>🏫 배운점</h2>
-				<li>MSA에 대해 학습하고 이해할 수 있었습니다.</li>
-				<li>Spring Cloud에 대해서 학습할 수 있었습니다.</li>
-				<li>RabbitMQ와 Feign Client에 대해 학습할 수 있었습니다.</li>
+				<p>
+					💡 VoteSKill 은 음성과 화상으로 즐길 수 있는 웹 마피아 게임
+					입니다.
+				</p>
 			</React.Fragment>
 		),
 		review: (
 			<React.Fragment>
-				<h3>비효율적인 서비스 분할 (굳이 MSA일 필요가 있었는가?)</h3>
+				<h3>프로젝트 성과</h3>
 				<p>
-					서비스를 분리했음에도 서비스 간의 상호작용이 많았습니다.
-					서비스와 다른 서비스 간의 경계가 명확하지 않아 MSA로 굳이 할
-					필요가 있었는지 의문점이 들었습니다. 완전히 분리할 수 있는
-					도메인이 아니었기 때문에 A 서비스를 사용해도 B,C와
-					상호작용하는 식의 기능이 많았습니다. 모든 서비스가
-					얽혀있었기 때문에 굳이 MSA 구조로 설계할 필요가 없었다는
-					생각이 들었습니다. 물론 서비스를 제대로 분리했다면
-					괜찮았겠지만, 모든 서비스가 환경 활동 인증, 제보, 적립과
-					얽혀있었기 때문에 개발 비용이나 서버 비용 등 모놀로식으로
-					진행하는 것이 더 나았을 것이라고 생각합니다. Monolothic으로
-					했다면 매우 간단하게 구현할 수 있는 작업을 MSA로 구현해서
-					불필요한 통신이 늘어났습니다. 프론트엔드의 경우 원하는
-					정보를 얻기 위해 API를 매우 여러 번 요청해야 했습니다.
-					이러한 과정에서 서비스 분할이 제대로 이뤄지지 않았다고
-					느꼈으며, 불필요한 아키텍쳐 도입이라고 느끼게 되었습니다.
-				</p>
-				<h3>그럼에도 MSA 개발을 하며 배운 점</h3>
-				<p>
-					MSA를 도입해 개발하며 많은 것을 배웠습니다. 모놀리식으로
-					구현할 때보다 훨씬 더 신경쓸게 많았고,  통신 과정에서 어떤
-					기술을 사용할지도 많은 고민이 되었습니다.  에러가 발생할 때
-					어떤 서버에서 문제가 발생하는지 찾기가 어려워, 기회가 된다면
-					로깅과 분산처리를 진행하고 싶습니다. 프로젝트를 구현하며
-					RabbitMQ와 Feign Client를 사용했는데, 이를 사용하며 동기와
-					비동기에 대해서  더욱 이해도를 높일 수 있었습니다.  현재
-					RabbitMQ의 경우 잘못된 요청이 올 경우 무한히 재시도를
-					진행하는데, DLX를 이용해 재시도 횟수 제한 처리를  진행할
-					예정입니다.
-				</p>
-				<h3>인수 테스트 주도 개발</h3>
-				<p>
-					인수 테스트 주도 개발을 진행하며 테스트 코드 작성과 문서화를
-					강제화 했습니다.  테스트 코드를 먼저 작성하고 API를 구현한
-					뒤 테스트 코드가 통과하는 것을 확인하니 매우 뿌듯했습니다. 
-					테스트 커버리지 목표를 80%로 설정하고 테스트 코드를
-					작성했습니다.  앞으로도 품질이 높은 코드와 휴먼 에러가 적은
-					코드를 작성하기 위해 노력해야겠다고 생각했습니다.
+					이 프로젝트에서의 경험은 제 개발 역량을 크게 향상시켰습니다.
+					특히, Elasticsearch를 통한 검색 최적화와 AWS를 활용한 서비스
+					분리는 뛰어난 학습 경험이었습니다. 프로젝트를 통해 얻은
+					실무적인 지식과 경험은 제 개발 커리어에 큰 자산이
+					되었습니다.
 				</p>
 			</React.Fragment>
 		),
+		contents: [
+			{
+				title: "OAuth 와 JWT 방식 인증 / 인가",
+				description:
+					"다양한 인증 방식을 이해하고 Spring Security를 활용하여 인증 / 인가 를 구현 하였습니다.",
+				description2: [
+					"Oauth2.0의 Authorization Grant Type에 대해 이해하고 있으며 Code Grant Type을 적용하여 Spring Security를 활용하여 Oauth2.0 인증방식의 로그인을 구현 하였습니다.",
+					"Spring Security의 Filter Chain에 대해 이해하며 필터를 커스텀하여 JWT 인증 절차를 구현하였습니다. ",
+					"Redis의 TTL을 통하여 Refresh Token을 관리하였습니다.",
+				],
+			},
+			{
+				title: "MSA 환경에서의 Redis",
+				description:
+					"MSA 환경에서 동기화를 위해 Redis를 활용하고 직렬화 과정에서 발생한 문제를 해결하였습니다.",
+				description2: [
+					"다양한 Serializer를 비교하며 특징을 분석하고 MSA 환경에서 적합한 StringSerializer를 적용하여 게임 방을 관리하였습니다.",
+				],
+			},
+			{
+				title: "WebRTC의 이해와 적용",
+				description:
+					"WebRTC의 구조와 동작과정에 대해 이해하고 OpenVidu 라이브러리를 분석하고 커스텀하여 적용하였습니다.",
+				description2: [
+					"WebRTC의 Media Server, Signaling Server, Stun Server의 역할을 이해하며 Signaling Server를 구현하였습니다.",
+				],
+			},
+			{
+				title: "SSE 방식 도입",
+				description:
+					"기존의 WebSocket 방식에서 SSE 로 전환하여 부하를 줄였습니다.",
+				description2: [
+					"게임 진행시 서버에서 발생한 이벤트를 Client에 보내주는 상황에서 단방향으로만 통신이 이루어지기 때문에 SSE 방식으로 통신을 구현 하였습니다.",
+				],
+			},
+			{
+				title: "게임 진행 자동화 및 비동기 처리",
+				description: "시간에 따라 게임 진행을 처리하였습니다.",
+				description2: [
+					"마피아 게임의 특성상 시간에 따라 하나의 흐름으로 게임이 진행되기 때문에 이를 Spring Scheduler를 활용하여 자동화 및 비동기 처리 하였습니다.",
+				],
+			},
+		],
+		blog: [
+			{
+				title: "Spring Security OAuth2.0",
+				description: "Spring Security를 사용하여 카카오 로그인 구현",
+				link: "https://velog.io/@ch0jm/test-16c3zc2fF",
+				linkText: "Read more",
+			},
+			{
+				title: "MSA 환경에서의 Redis",
+				description: "MSA 환경에서 동기화를 위해 Redis를 사용한 이유",
+				link: "https://velog.io/@ch0jm/5ar87jd1",
+				linkText: "Read more",
+			},
+			{
+				title: "Spring WebRTC 구현",
+				description: "OpenVidu 라이브러리를 통해 WebRTC 구현",
+				link: "https://velog.io/@ch0jm/yvt1mkyl",
+				linkText: "Read more",
+			},
+		],
 	};
 }
 function article_5() {
 	return {
-		period: "2023.10 ~ 2023.11 (7주)",
-		title: "🌱 EARA",
-		description: "탄소 중립 활동을 하며 환경 보호를 실천하는 서비스",
-		linkcolor: "#e8fd8b",
-		hovercolor: "#cbf58c",
-		links: [
-			{
-				info: "영상 URL",
-				url: "https://www.youtube.com/watch?v=8FcnqC_jvRc",
-			},
-			{
-				info: "Github URL",
-				url: "https://github.com/We-Eokam/Ea-ra",
-			},
-		],
+		period: "2023.05.12 ~ 2023.05.25 (2주)",
+		title: "HappyTrail",
+		description: "여행 계획을 공유 할 수 있는 웹 서비스",
+		video: "https://youtu.be/w7pCXWuZtfo",
+		linkcolor: "#d6f0ff",
+		hovercolor: "#6cb5f9",
+		github: "https://github.com/lastname-dev/happytrail",
 		stacks: [
-			"Java, Spring Boot, Gradle",
-			"MariaDB, Spring Data JPA",
-			"Spring Cloud, RabbitMQ",
-			"Amazon EC2, Amazon S3, Docker, Jenkins, Nginx, SonarQube, Jacoco, Git, Gitlab, Jira",
+			"Java, Spring Boot, Servlet",
+			"MySQL, JDBC, MyBatis",
+			"HTML, CSS, JS, Vue.js",
 		],
 		develop_role: [
-			"데이터베이스 설계 참여",
-			"서버 구조 설계 참여",
-			"Amazon S3를 이용한 파일 업로드 구현",
-			"활동으로 인한 재화 적립 서버 구현",
-			"환경 오염 활동 제보 서버 구현",
-			"Jenkins와 Docker를 이용해 배포 진행",
-			"SonarQube 적용",
+			"회원가입, 로그인, 로그아웃, 마이페이지",
+			"정보 공유 게시판",
+			"현재 진행중인 페스티벌 조회",
+			"여행 후기 게시판",
+			"여행 계획 작성, 경로 제공, 공유",
+			"여행지 검색",
+			"게시글 좋아요, 유저 팔로우",
 		],
-		keywords: [
-			"Spring Boot",
-			"Tharindu",
-			"Tharindu N",
-			"Tharindu Nayanajith",
-		],
-		role: "백엔드 개발, 인프라",
-		team: "팀 프로젝트 (BE 3, FE 3)",
-		thumbnail_image: "../eara-thumbnail.png",
-		architecture_image: "../eara-ad.png",
-		long_description:
-			"EARA는 친구와 함께 탄소 중립 활동을 하며 환경 보호를 실천하는 서비스입니다. 탄소 중립 포인트와 연결하여, 사용자가 한 환경 보호 활동에 대해서 얼마나 많은 탄소 중립 포인트를 얻을 수 있는지 수치적으로 분석하고 그래프로 확인할 수 있습니다.",
-		develop_content: (
+		keywords: ["Spring Boot", "Elasticsearch", "AWS Lambda", "API Gateway"],
+		role: "풀스택 개발",
+		team: "2명 (Full Stack 2)",
+		thumbnail_image: "../Happytrail.png",
+		erd_image:
+			"https://github.com/lastname-dev/happytrail/assets/81070080/a6090488-1c4e-4330-9aa9-64084a0d92c7",
+		long_description: (
 			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					<b>Business</b>
-					<ul>
-						<li>
-							제보장을 가진 사용자는 환경 오염을 한 친구를 제보할
-							수 있다.
-							<ul>
-								<li>
-									제보할 때는 대상, 제보 내용, 사진을 입력해야
-									한다.
-								</li>
-								<li>
-									제보 내용이 '기타'인 경우 제보 세부 내용을
-									사용자가 작성해야 한다.
-								</li>
-								<li>제보 시 제보장의 개수가 1개씩 줄어든다.</li>
-							</ul>
-						</li>
-						<li>회원은 자신이 받은 제보를 볼 수 있다</li>
-						<li>
-							다른 유저의 페이지에 갔을 때, 자신이 보낸 제보장만
-							볼 수 있다.
-						</li>
-						<li>
-							회원은 환경 보호 활동을 하거나 제보를 당함으로써
-							재화를 쌓거나 잃을 수 있다.
-						</li>
-						<li>
-							최근 일주일/한 달 간 적립된 일별 재화 양과 활동
-							횟수를 조회할 수 있다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<b>Tech</b>
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>
-							이미지 등록은 클라우드 서비스에 합니다. (Amazon S3)
-						</li>
-						<li>모든 기능은 로그인한 유저만 가능합니다.</li>
-						<li>AWS EC2에 Docker를 이용해 배포합니다.</li>
-						<li>
-							제보장의 개수는 User Service에 요청해서 줄여야
-							합니다.
-						</li>
-						<li>
-							제보를 한 뒤 해당하는 활동에 대한 재화 적립을
-							요청해야합니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>Amazon S3와 멀티파트를 이용해 파일 업로드 기능 구현</li>
-				<li>
-					MSA 구조로 백엔드 서버를 개발 (제보 서버, 적립 서버 구현)
-					<img
-						src="../eara-msa.png"
-						className="architecture-image"
-					></img>
-					<p>
-						(맡은 서버와 직접적으로 관련된 아키텍쳐만
-						나타나있습니다. 일부 로직이 생략되어있습니다. 실제로는
-						더 많은 서버가 있습니다.)
-					</p>
-					<ul>
-						<li>
-							속도 개선을 위해 통신 후 응답이 필요하지 않은 경우
-							비동기로 진행하기로 했습니다.   
-						</li>
-						<li>
-							요청이 누락되지 않게 하기 위해 메시지큐(RabbitMQ)를
-							사용했습니다.
-						</li>
-						<li>
-							응답이 필요한 경우 Feign Client를 사용하여 보다
-							간편하게 코드를 구현했습니다
-						</li>
-					</ul>
-				</li>
-				<li>
-					정적 코드 분석 및 테스트 커버리지 측정
-					<ul>
-						<li>
-							테스트 커버리지의 목표를 80%로 하고 테스트 코드를
-							작성했습니다.
-						</li>
-						<li>
-							Junit과 Mockito, Rest Assured를 이용해 테스트 코드를
-							작성했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					인수 테스트 주도 개발 진행
-					<a
-						className="eara-link"
-						href="https://github.com/We-Eokam/Ea-ra/blob/master/accusation/src/test/java/com/eokam/accusation/acceptance/AccusationAcceptanceTest.java"
-					>
-						[인수 테스트 코드 링크]
-					</a>
-					<ul>
-						<li>
-							휴먼 에러를 줄이고, 코드의 품질과 요구사항에 대한
-							이해를 높이기 위해  인수 테스트 주도 개발을
-							진행했습니다. 
-						</li>
-						<li>
-							가독성을 높이기 위해 한글 메서드 네이밍을
-							사용했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Github의 Webhook을 이용해 브랜치에 push시 자동으로
-					배포되도록 Jenkins pipeline 작성
-					<ul>
-						<li>Dockerfile을 이용해 이미지 빌드 후 배포 진행</li>
-					</ul>
-				</li>
-				<h2>🏫 배운점</h2>
-				<li>MSA에 대해 학습하고 이해할 수 있었습니다.</li>
-				<li>Spring Cloud에 대해서 학습할 수 있었습니다.</li>
-				<li>RabbitMQ와 Feign Client에 대해 학습할 수 있었습니다.</li>
+				<p>
+					💡 HappyTrail은 여행 계획을 공유 할 수 있는 웹 서비스 입니다
+				</p>
 			</React.Fragment>
 		),
 		review: (
 			<React.Fragment>
-				<h3>비효율적인 서비스 분할 (굳이 MSA일 필요가 있었는가?)</h3>
+				<h3>프로젝트 성과</h3>
 				<p>
-					서비스를 분리했음에도 서비스 간의 상호작용이 많았습니다.
-					서비스와 다른 서비스 간의 경계가 명확하지 않아 MSA로 굳이 할
-					필요가 있었는지 의문점이 들었습니다. 완전히 분리할 수 있는
-					도메인이 아니었기 때문에 A 서비스를 사용해도 B,C와
-					상호작용하는 식의 기능이 많았습니다. 모든 서비스가
-					얽혀있었기 때문에 굳이 MSA 구조로 설계할 필요가 없었다는
-					생각이 들었습니다. 물론 서비스를 제대로 분리했다면
-					괜찮았겠지만, 모든 서비스가 환경 활동 인증, 제보, 적립과
-					얽혀있었기 때문에 개발 비용이나 서버 비용 등 모놀로식으로
-					진행하는 것이 더 나았을 것이라고 생각합니다. Monolothic으로
-					했다면 매우 간단하게 구현할 수 있는 작업을 MSA로 구현해서
-					불필요한 통신이 늘어났습니다. 프론트엔드의 경우 원하는
-					정보를 얻기 위해 API를 매우 여러 번 요청해야 했습니다.
-					이러한 과정에서 서비스 분할이 제대로 이뤄지지 않았다고
-					느꼈으며, 불필요한 아키텍쳐 도입이라고 느끼게 되었습니다.
-				</p>
-				<h3>그럼에도 MSA 개발을 하며 배운 점</h3>
-				<p>
-					MSA를 도입해 개발하며 많은 것을 배웠습니다. 모놀리식으로
-					구현할 때보다 훨씬 더 신경쓸게 많았고,  통신 과정에서 어떤
-					기술을 사용할지도 많은 고민이 되었습니다.  에러가 발생할 때
-					어떤 서버에서 문제가 발생하는지 찾기가 어려워, 기회가 된다면
-					로깅과 분산처리를 진행하고 싶습니다. 프로젝트를 구현하며
-					RabbitMQ와 Feign Client를 사용했는데, 이를 사용하며 동기와
-					비동기에 대해서  더욱 이해도를 높일 수 있었습니다.  현재
-					RabbitMQ의 경우 잘못된 요청이 올 경우 무한히 재시도를
-					진행하는데, DLX를 이용해 재시도 횟수 제한 처리를  진행할
-					예정입니다.
-				</p>
-				<h3>인수 테스트 주도 개발</h3>
-				<p>
-					인수 테스트 주도 개발을 진행하며 테스트 코드 작성과 문서화를
-					강제화 했습니다.  테스트 코드를 먼저 작성하고 API를 구현한
-					뒤 테스트 코드가 통과하는 것을 확인하니 매우 뿌듯했습니다. 
-					테스트 커버리지 목표를 80%로 설정하고 테스트 코드를
-					작성했습니다.  앞으로도 품질이 높은 코드와 휴먼 에러가 적은
-					코드를 작성하기 위해 노력해야겠다고 생각했습니다.
+					이 프로젝트에서의 경험은 제 개발 역량을 크게 향상시켰습니다.
+					특히, Elasticsearch를 통한 검색 최적화와 AWS를 활용한 서비스
+					분리는 뛰어난 학습 경험이었습니다. 프로젝트를 통해 얻은
+					실무적인 지식과 경험은 제 개발 커리어에 큰 자산이
+					되었습니다.
 				</p>
 			</React.Fragment>
 		),
+		contents: [
+			{
+				title: "탄탄한 기본기",
+				description:
+					"JDBC, Servlet, JSP와 같은 JAVA EE의 핵심 기술만을 활용하여 웹 애플리케이션을 개발하며 기본기의 탄탄함을 갖출 수 있었습니다.",
+				description2: [
+					"Java + Servlet →JDBC + HTML →SpringMVC + JDBC + JSP →SpringBoot + MyBatis + Vue  순서대로 발전 시켜나가며 웹 애플리케이션의 발전과정을 직접 경험하였습니다.",
+				],
+			},
+			{
+				title: "데이터의 활용",
+				description:
+					"공공데이터 API를 활용하여 데이터 크롤링을 하고, JSON/XML 파싱을 통한 데이터를 가공하여 처리하였습니다.",
+				description2: [
+					"SAX, DOM Parser에 대한 이해를 하고 적용하였습니다.",
+					"관광지 정보를 외부 API를 활용하여 크롤링하고, 필요한 데이터로 가공하여 저장하였습니다.",
+					"MyBatis와 MySQL을 사용하여 약 30만건의 데이터를 관리하였습니다.",
+				],
+			},
+			{
+				title: "웹 전반에 대한 이해",
+				description: "",
+				description2: [
+					"Vuex를 통한 전역 상태관리, 컴포넌트 재사용, Axios를 통한 비동기 통신 등을 진행하며 Vue를 이해하였습니다.",
+					"풀스택 개발을 통하여 웹 어플리케이션 각 구성 요소 간의 상호작용에 대해 이해하였습니다.",
+				],
+			},
+			{
+				title: "설계 및 협업",
+				description: "",
+				description2: [
+					"Usecase Diagram, Class Diagram, ERD, API 명세서 등의 탄탄한 설계 를 기반으로 하여 개발을 진행하였습니다.",
+					"Git Branch Convention 및 Commit Convention 을 준수하며 Git 을 통해 협업 하였습니다. ",
+					"기획 ,설계, 개발, 발표를 진행하며 프로젝트 프로세스에 대해 배울 수 있었습니다.",
+				],
+			},
+		],
 	};
 }
 function article_6() {
 	return {
-		period: "2023.10 ~ 2023.11 (7주)",
-		title: "🌱 EARA",
-		description: "탄소 중립 활동을 하며 환경 보호를 실천하는 서비스",
-		linkcolor: "#e8fd8b",
-		hovercolor: "#cbf58c",
-		links: [
-			{
-				info: "영상 URL",
-				url: "https://www.youtube.com/watch?v=8FcnqC_jvRc",
-			},
-			{
-				info: "Github URL",
-				url: "https://github.com/We-Eokam/Ea-ra",
-			},
-		],
+		period: "2022.03 ~ 2022.09 ",
+		title: "Virtual Fitting",
+		description: "가상 피팅을 할 수 있는 쇼핑몰",
+		video: "https://www.youtube.com/watch?v=cga9QnJL2Ik&t=214s",
+		linkcolor: "#d6f0ff",
+		hovercolor: "#6cb5f9",
+		github: "https://github.com/lastname-dev/virtualfitting",
 		stacks: [
-			"Java, Spring Boot, Gradle",
-			"MariaDB, Spring Data JPA",
-			"Spring Cloud, RabbitMQ",
-			"Amazon EC2, Amazon S3, Docker, Jenkins, Nginx, SonarQube, Jacoco, Git, Gitlab, Jira",
+			"JavaScript, Node.js",
+			"MongoDB",
+			"HTML, CSS, React",
+			"AWS Lambda, S3",
 		],
 		develop_role: [
-			"데이터베이스 설계 참여",
-			"서버 구조 설계 참여",
-			"Amazon S3를 이용한 파일 업로드 구현",
-			"활동으로 인한 재화 적립 서버 구현",
-			"환경 오염 활동 제보 서버 구현",
-			"Jenkins와 Docker를 이용해 배포 진행",
-			"SonarQube 적용",
+			"풀스택 개발을 맡아 쇼핑몰 웹 전반에 대한 구현을 담당하였습니다.",
 		],
-		keywords: [
-			"Spring Boot",
-			"Tharindu",
-			"Tharindu N",
-			"Tharindu Nayanajith",
-		],
-		role: "백엔드 개발, 인프라",
-		team: "팀 프로젝트 (BE 3, FE 3)",
-		thumbnail_image: "../eara-thumbnail.png",
-		architecture_image: "../eara-ad.png",
-		long_description:
-			"EARA는 친구와 함께 탄소 중립 활동을 하며 환경 보호를 실천하는 서비스입니다. 탄소 중립 포인트와 연결하여, 사용자가 한 환경 보호 활동에 대해서 얼마나 많은 탄소 중립 포인트를 얻을 수 있는지 수치적으로 분석하고 그래프로 확인할 수 있습니다.",
-		develop_content: (
+		keywords: ["Spring Boot", "Elasticsearch", "AWS Lambda", "API Gateway"],
+		role: "풀스택 개발",
+		team: "2명 (Web 1, AI 1)",
+		thumbnail_image: "../Virtualfitting.png",
+		long_description: (
 			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					<b>Business</b>
-					<ul>
-						<li>
-							제보장을 가진 사용자는 환경 오염을 한 친구를 제보할
-							수 있다.
-							<ul>
-								<li>
-									제보할 때는 대상, 제보 내용, 사진을 입력해야
-									한다.
-								</li>
-								<li>
-									제보 내용이 '기타'인 경우 제보 세부 내용을
-									사용자가 작성해야 한다.
-								</li>
-								<li>제보 시 제보장의 개수가 1개씩 줄어든다.</li>
-							</ul>
-						</li>
-						<li>회원은 자신이 받은 제보를 볼 수 있다</li>
-						<li>
-							다른 유저의 페이지에 갔을 때, 자신이 보낸 제보장만
-							볼 수 있다.
-						</li>
-						<li>
-							회원은 환경 보호 활동을 하거나 제보를 당함으로써
-							재화를 쌓거나 잃을 수 있다.
-						</li>
-						<li>
-							최근 일주일/한 달 간 적립된 일별 재화 양과 활동
-							횟수를 조회할 수 있다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<b>Tech</b>
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>
-							이미지 등록은 클라우드 서비스에 합니다. (Amazon S3)
-						</li>
-						<li>모든 기능은 로그인한 유저만 가능합니다.</li>
-						<li>AWS EC2에 Docker를 이용해 배포합니다.</li>
-						<li>
-							제보장의 개수는 User Service에 요청해서 줄여야
-							합니다.
-						</li>
-						<li>
-							제보를 한 뒤 해당하는 활동에 대한 재화 적립을
-							요청해야합니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>Amazon S3와 멀티파트를 이용해 파일 업로드 기능 구현</li>
-				<li>
-					MSA 구조로 백엔드 서버를 개발 (제보 서버, 적립 서버 구현)
-					<img
-						src="../eara-msa.png"
-						className="architecture-image"
-					></img>
-					<p>
-						(맡은 서버와 직접적으로 관련된 아키텍쳐만
-						나타나있습니다. 일부 로직이 생략되어있습니다. 실제로는
-						더 많은 서버가 있습니다.)
-					</p>
-					<ul>
-						<li>
-							속도 개선을 위해 통신 후 응답이 필요하지 않은 경우
-							비동기로 진행하기로 했습니다.   
-						</li>
-						<li>
-							요청이 누락되지 않게 하기 위해 메시지큐(RabbitMQ)를
-							사용했습니다.
-						</li>
-						<li>
-							응답이 필요한 경우 Feign Client를 사용하여 보다
-							간편하게 코드를 구현했습니다
-						</li>
-					</ul>
-				</li>
-				<li>
-					정적 코드 분석 및 테스트 커버리지 측정
-					<ul>
-						<li>
-							테스트 커버리지의 목표를 80%로 하고 테스트 코드를
-							작성했습니다.
-						</li>
-						<li>
-							Junit과 Mockito, Rest Assured를 이용해 테스트 코드를
-							작성했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					인수 테스트 주도 개발 진행
-					<a
-						className="eara-link"
-						href="https://github.com/We-Eokam/Ea-ra/blob/master/accusation/src/test/java/com/eokam/accusation/acceptance/AccusationAcceptanceTest.java"
-					>
-						[인수 테스트 코드 링크]
-					</a>
-					<ul>
-						<li>
-							휴먼 에러를 줄이고, 코드의 품질과 요구사항에 대한
-							이해를 높이기 위해  인수 테스트 주도 개발을
-							진행했습니다. 
-						</li>
-						<li>
-							가독성을 높이기 위해 한글 메서드 네이밍을
-							사용했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Github의 Webhook을 이용해 브랜치에 push시 자동으로
-					배포되도록 Jenkins pipeline 작성
-					<ul>
-						<li>Dockerfile을 이용해 이미지 빌드 후 배포 진행</li>
-					</ul>
-				</li>
-				<h2>🏫 배운점</h2>
-				<li>MSA에 대해 학습하고 이해할 수 있었습니다.</li>
-				<li>Spring Cloud에 대해서 학습할 수 있었습니다.</li>
-				<li>RabbitMQ와 Feign Client에 대해 학습할 수 있었습니다.</li>
+				<p>
+					💡 Virtual Fitting 은 가상 피팅을 할 수 있는 쇼핑몰 입니다.
+				</p>
 			</React.Fragment>
 		),
 		review: (
 			<React.Fragment>
-				<h3>비효율적인 서비스 분할 (굳이 MSA일 필요가 있었는가?)</h3>
+				<h3>프로젝트 성과</h3>
 				<p>
-					서비스를 분리했음에도 서비스 간의 상호작용이 많았습니다.
-					서비스와 다른 서비스 간의 경계가 명확하지 않아 MSA로 굳이 할
-					필요가 있었는지 의문점이 들었습니다. 완전히 분리할 수 있는
-					도메인이 아니었기 때문에 A 서비스를 사용해도 B,C와
-					상호작용하는 식의 기능이 많았습니다. 모든 서비스가
-					얽혀있었기 때문에 굳이 MSA 구조로 설계할 필요가 없었다는
-					생각이 들었습니다. 물론 서비스를 제대로 분리했다면
-					괜찮았겠지만, 모든 서비스가 환경 활동 인증, 제보, 적립과
-					얽혀있었기 때문에 개발 비용이나 서버 비용 등 모놀로식으로
-					진행하는 것이 더 나았을 것이라고 생각합니다. Monolothic으로
-					했다면 매우 간단하게 구현할 수 있는 작업을 MSA로 구현해서
-					불필요한 통신이 늘어났습니다. 프론트엔드의 경우 원하는
-					정보를 얻기 위해 API를 매우 여러 번 요청해야 했습니다.
-					이러한 과정에서 서비스 분할이 제대로 이뤄지지 않았다고
-					느꼈으며, 불필요한 아키텍쳐 도입이라고 느끼게 되었습니다.
-				</p>
-				<h3>그럼에도 MSA 개발을 하며 배운 점</h3>
-				<p>
-					MSA를 도입해 개발하며 많은 것을 배웠습니다. 모놀리식으로
-					구현할 때보다 훨씬 더 신경쓸게 많았고,  통신 과정에서 어떤
-					기술을 사용할지도 많은 고민이 되었습니다.  에러가 발생할 때
-					어떤 서버에서 문제가 발생하는지 찾기가 어려워, 기회가 된다면
-					로깅과 분산처리를 진행하고 싶습니다. 프로젝트를 구현하며
-					RabbitMQ와 Feign Client를 사용했는데, 이를 사용하며 동기와
-					비동기에 대해서  더욱 이해도를 높일 수 있었습니다.  현재
-					RabbitMQ의 경우 잘못된 요청이 올 경우 무한히 재시도를
-					진행하는데, DLX를 이용해 재시도 횟수 제한 처리를  진행할
-					예정입니다.
-				</p>
-				<h3>인수 테스트 주도 개발</h3>
-				<p>
-					인수 테스트 주도 개발을 진행하며 테스트 코드 작성과 문서화를
-					강제화 했습니다.  테스트 코드를 먼저 작성하고 API를 구현한
-					뒤 테스트 코드가 통과하는 것을 확인하니 매우 뿌듯했습니다. 
-					테스트 커버리지 목표를 80%로 설정하고 테스트 코드를
-					작성했습니다.  앞으로도 품질이 높은 코드와 휴먼 에러가 적은
-					코드를 작성하기 위해 노력해야겠다고 생각했습니다.
+					이 프로젝트에서의 경험은 제 개발 역량을 크게 향상시켰습니다.
+					특히, Elasticsearch를 통한 검색 최적화와 AWS를 활용한 서비스
+					분리는 뛰어난 학습 경험이었습니다. 프로젝트를 통해 얻은
+					실무적인 지식과 경험은 제 개발 커리어에 큰 자산이
+					되었습니다.
 				</p>
 			</React.Fragment>
 		),
+		contents: [
+			{
+				title: "AWS Lambda를 이용한 이미지 리사이징",
+				description:
+					"가상 피팅 진행시 유저가 결과를 받아보기까지 오랜시간 소요되는 문제 상황이 있었습니다.",
+				description2: [
+					"AI 모델은 256*256 크기의 이미지를 사용하기 때문에 AWS Lambda를 이용하여 리사이징을 한 후 AI 서버는 피팅 하는 서비스에만 전담하도록 구성 하였습니다.",
+					"Presigned URL을 이용하여 서버를 거치지 않고 바로 이미지를 업로드 할 수 있도록 하였습니다.",
+				],
+			},
+
+			{
+				title: "풀스택 개발을 통한 웹 전반에 대한 이해",
+				description: "",
+				description2: [
+					"풀스택 개발을 통해 웹 애플리케이션의 흐름을 잘 파악할 수 있었습니다.",
+					"클라이언트 측과 서버 측이 담당할 영역을 잘 구분해내고 후에 백엔드 개발을 진행할 때에 프론트엔드와 원활하게 협업할 수 있는 밑바탕이 되었습니다.",
+				],
+			},
+		],
 	};
 }
 

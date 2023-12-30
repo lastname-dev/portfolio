@@ -44,7 +44,7 @@ const INFO = {
 		{
 			title: "Emotion Bank",
 			description: "감정을 입출금하는 서비스",
-			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/4fc25403-9f77-4203-8695-61c61755ae6b",
+			logo: "./emotion.png",
 			period: "23.08.28 ～ 23.10.06",
 			linkText: "View Project",
 			link: "/projects/2",
@@ -54,7 +54,7 @@ const INFO = {
 			title: "Share Account",
 			description: "여행의 시작부터 끝까지 책임지는 공유 통장",
 			logo: "./bank.png",
-			period: "23.08.12 ～ 23.09.17",
+			period: "23.08.19 ～ 23.09.17",
 			linkText: "View Project",
 			link: "/projects/3",
 		},
@@ -69,9 +69,9 @@ const INFO = {
 		},
 
 		{
-			title: "Enjoy Trip",
+			title: "HappyTrail",
 			description: "여행 계획을 공유할 수 있는 서비스 ",
-			logo: "https://github.com/MZBR-2023/business-service/assets/81070080/4a11114f-8611-442b-afa5-b4c457ac24bb",
+			logo: "./trip.png",
 			period: "23-05-12 ～ 23.05.25",
 			linkText: "View Project",
 			link: "/projects/5",
