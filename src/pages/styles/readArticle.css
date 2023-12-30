@@ -114,8 +114,48 @@
 }
 
 @media (max-width: 768px) {
+	/* 로고 컨테이너 스타일 조정 */
+	.read-article-logo-container {
+		justify-content: center; /* 로고를 중앙으로 정렬 */
+	}
+
+	/* 뒤로 가기 버튼 스타일 조정 */
+	.read-article-back {
+		margin-right: 0; /* 오른쪽 마진 제거 */
+		margin-left: 10px; /* 왼쪽에 여백 추가 */
+	}
+
+	/* 글 읽기 영역의 너비 조정 */
 	.read-article-wrapper {
-		width: 100%;
+		width: 90%; /* 화면 너비에 맞게 조정 */
+		padding: 0 5%; /* 양쪽에 패딩 추가 */
+	}
+
+	/* 기사 제목 스타일 조정 */
+	.read-article-title {
+		font-size: 24px; /* 모바일 화면에 맞는 크기로 조정 */
+	}
+
+	/* 본문의 글자 크기 조정 */
+	.read-article-body {
+		font-size: 14px; /* 모바일 화면에 맞게 조정 */
+	}
+
+	/* 이미지 스타일 조정 */
+	.project-image,
+	.architecture-image {
+		width: 100%; /* 이미지가 화면 너비에 맞게 조정되도록 함 */
+	}
+
+	/* 기술 스택 및 역할 리스트 스타일 조정 */
+	.read-article-body ul {
+		padding-left: 15px; /* 들여쓰기 조정 */
+	}
+
+	/* 프로젝트 소개, 기술 스택 등의 헤더 스타일 조정 */
+	.project-intro {
+		font-size: 20px; /* 글자 크기 조정 */
+		margin: 10px 0; /* 상하 여백 조정 */
 	}
 }
 
